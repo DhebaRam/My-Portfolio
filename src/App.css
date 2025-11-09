@@ -1,0 +1,94 @@
+.App {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Background */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  animation: backgroundMove 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes backgroundMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Floating particles */
+.App::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(99, 102, 241, 0.3), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(236, 72, 153, 0.3), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(139, 92, 246, 0.3), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(99, 102, 241, 0.3), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(236, 72, 153, 0.3), transparent),
+    radial-gradient(1px 1px at 33% 80%, rgba(139, 92, 246, 0.3), transparent);
+  background-size: 200% 200%;
+  animation: particleMove 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+@keyframes particleMove {
+  0%, 100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%, 80% 10%, 90% 60%, 33% 80%;
+  }
+  50% {
+    background-position: 100% 100%, 0% 0%, 50% 50%, 20% 90%, 10% 40%, 67% 20%;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Ensure content is above background */
+.App > * {
+  position: relative;
+  z-index: 1;
+}

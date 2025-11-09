@@ -1,0 +1,106 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.brand-name {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .nav-brand {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+  
+  .nav-menu {
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
+  .nav-menu li {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .nav-menu a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
