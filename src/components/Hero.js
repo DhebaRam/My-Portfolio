@@ -63,16 +63,27 @@ const Hero = () => {
               <div className="code-snippet">
                 <div className="code-line">
                   <span className="code-keyword">class</span>{' '}
-                  <span className="code-class">FlutterDeveloper</span> {'{'}
+                  <span className="code-class">FlutterDeveloper</span> <span className="code-keyword">extends</span>{' '}
+                  <span className="code-class">StatelessWidget</span> {'{'}
                 </div>
                 <div className="code-line indent">
                   <span className="code-keyword">final</span>{' '}
-                  <span className="code-variable">experience</span> = <span className="code-string">'4+ years'</span>;
+                  <span className="code-variable">experience</span> = <span className="code-string">'2+ years'</span>;
                 </div>
                 <div className="code-line indent">
                   <span className="code-keyword">final</span>{' '}
-                  <span className="code-variable">passion</span> = <span className="code-string">'Mobile Apps'</span>;
+                  <span className="code-variable">passion</span> = <span className="code-string">'Flutter'</span>;
                 </div>
+                <div className="code-line indent">
+                  <span className="code-keyword">@override</span>
+                </div>
+                <div className="code-line indent">
+                  <span className="code-class">Widget</span> <span className="code-function">build</span>(<span className="code-class">BuildContext</span> context) {'{'}
+                </div>
+                <div className="code-line indent-2">
+                  <span className="code-keyword">return</span> <span className="code-class">Portfolio</span>();
+                </div>
+                <div className="code-line indent">{'}'}</div>
                 <div className="code-line">{'}'}</div>
               </div>
             </div>
