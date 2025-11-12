@@ -145,6 +145,7 @@ const Projects = () => {
         });
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleImageClick = (imagePath) => {
